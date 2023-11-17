@@ -1,0 +1,6 @@
+package com.example.practic_widget
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}

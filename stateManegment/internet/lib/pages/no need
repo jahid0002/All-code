@@ -1,0 +1,21 @@
+
+
+ StreamController<ConnectivityStatus> connectionStatusController =
+      StreamController<ConnectivityStatus>();
+
+  InternetProvider() {
+    Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
+      connectionStatusController.add(_getStatusFromResult(result));
+    });
+  }
+
+  ConnectivityStatus _getStatusFromResult(ConnectivityResult result) {
+    switch (result) {
+      case ConnectivityResult.mobile:
+        return ConnectivityStatus.internet;
+      case ConnectivityResult.wifi:
+        return ConnectivityStatus.wifi;
+      case ConnectivityResult.none:
+        return ConnectivityStatus.internet;
+    }
+  }
