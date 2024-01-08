@@ -1,4 +1,5 @@
 import 'package:extra_class1/const/allText.dart';
+import 'package:extra_class1/pages/loginPage2.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -13,10 +14,9 @@ class LoginPage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
-      body: SafeArea( 
-       
+      body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(right:20.0, left: 20),
+          padding: const EdgeInsets.only(right: 20.0, left: 20),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -49,7 +49,8 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      AllText.text('Password', Colors.black, 18, FontWeight.w500),
+                      AllText.text(
+                          'Password', Colors.black, 18, FontWeight.w500),
                       Container(
                         height: size.height / 18,
                         width: size.width,
@@ -58,7 +59,8 @@ class LoginPage extends StatelessWidget {
                           border: Border.all(width: 2, color: Colors.black26),
                         ),
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: InputDecoration( 
+                            suffixIcon: const Icon(Icons.remove_red_eye_outlined),
                             focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                     width: 2, color: Colors.teal.shade900)),
@@ -69,16 +71,22 @@ class LoginPage extends StatelessWidget {
                       const SizedBox(
                         height: 60,
                       ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 70,
-                        width: size.width,
-                        decoration: BoxDecoration(
-                          color: Colors.teal.shade900,
-                          borderRadius: BorderRadius.circular(40),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => const LoginPage2()));
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 70,
+                          width: size.width,
+                          decoration: BoxDecoration(
+                            color: Colors.teal.shade900,
+                            borderRadius: BorderRadius.circular(40),
+                          ),
+                          child: AllText.text(
+                              'Login ', Colors.white, 30, FontWeight.w800),
                         ),
-                        child: AllText.text(
-                            'Login ', Colors.white, 30, FontWeight.w800),
                       ),
                       const SizedBox(
                         height: 10,
@@ -92,19 +100,18 @@ class LoginPage extends StatelessWidget {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: AllText.text('?SignUP', Colors.teal.shade900, 23,
-                                FontWeight.w900),
+                            child: AllText.text('?SignUP', Colors.teal.shade900,
+                                23, FontWeight.w900),
                           ),
                         ],
                       ),
-                     
                     ],
                   )),
-                ), 
-                 SizedBox( 
-                  width: size.width,
-                     child: Image.asset('assets/images/login2.png',
-                         fit: BoxFit.cover)),
+                ),
+                SizedBox(
+                    width: size.width,
+                    child: Image.asset('assets/images/login2.png',
+                        fit: BoxFit.cover)),
               ],
             ),
           ),

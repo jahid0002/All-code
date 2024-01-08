@@ -24,7 +24,7 @@ class SignUpPage extends StatelessWidget {
                   const SizedBox(
                     height: 60,
                   ),
-                  AllText.text('Sign Up', Colors.black, 35, FontWeight.w900),
+                  AllText.text('Sign Up', Colors.teal.shade900, 35, FontWeight.w900),
                   const SizedBox(
                     height: 5,
                   ),

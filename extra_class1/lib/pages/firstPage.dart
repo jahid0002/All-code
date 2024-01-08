@@ -71,7 +71,7 @@ class FirstPage extends StatelessWidget {
                           fontSize: 14,
                           fontWeight: FontWeight.bold),
                       border: InputBorder.none,
-                    ),   
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -113,9 +113,12 @@ class FirstPage extends StatelessWidget {
                             const SizedBox(
                               height: 20,
                             ),
-                            InkWell( 
-                              onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (_)=> const SecondPage()));
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => const SecondPage()));
                               },
                               child: Container(
                                 alignment: Alignment.center,
@@ -129,7 +132,8 @@ class FirstPage extends StatelessWidget {
                                   'Donasi Sekarang',
                                   style: TextStyle(
                                       color: Colors.green.shade800,
-                                      fontWeight: FontWeight.w800, fontSize: 20),
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 20),
                                 ),
                               ),
                             ),
@@ -189,12 +193,19 @@ class FirstPage extends StatelessWidget {
                             ),
                             child: Icon(Icons.nature,
                                 size: 30, color: Colors.green.shade800)),
-                        const Text('Satu',
+                        InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text(
+                            'Satu',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
-                            )),
+                            ),
+                          ),
+                        ),
                         const Text(
                           'Hutan',
                           style: TextStyle(
@@ -259,7 +270,7 @@ class FirstPage extends StatelessWidget {
                   height: 15,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left:5.0, right:5),
+                  padding: const EdgeInsets.only(left: 5.0, right: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -294,7 +305,7 @@ class FirstPage extends StatelessWidget {
                     const Positioned(
                       bottom: 40,
                       child: Padding(
-                        padding: EdgeInsets.only(left:20.0),
+                        padding: EdgeInsets.only(left: 20.0),
                         child: Text(
                           '100 Tress from LUCY \n to Indonesia',
                           style: TextStyle(
@@ -307,7 +318,7 @@ class FirstPage extends StatelessWidget {
                     const Positioned(
                       bottom: 15,
                       child: Padding(
-                        padding: EdgeInsets.only(left:20.0),
+                        padding: EdgeInsets.only(left: 20.0),
                         child: Text(
                           '220 Pohon Terkumpul',
                           style: TextStyle(

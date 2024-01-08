@@ -1,10 +1,12 @@
 import 'dart:convert';
+
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_app/seevice/newsModel.dart';
 
 class ApiController {
   List<NewsModel> articles = [];
+  List<NewsModel> breakingNewsArticles = [];
 
   final allNewsUrl =
       'https://newsapi.org/v2/everything?q=bitcoin&apiKey=d5ff393c068c45aebfe946d2a04795f9';
@@ -23,7 +25,7 @@ class ApiController {
       if (response.statusCode == 200) {
         var streamData = await response.stream.bytesToString();
 
-       Map<String, dynamic> data = jsonDecode(streamData);
+        Map<String, dynamic> data = jsonDecode(streamData);
         List<dynamic> body = data['articles'];
         body.forEach((element) {
           articles.add(NewsModel.fromJson(element));
@@ -43,14 +45,32 @@ class ApiController {
       if (response.statusCode == 200) {
         Map<String, dynamic> json = jsonDecode(response.body);
         List<dynamic> body = json['articles'];
-        List<NewsModel> articles =
-            body.map((item) => NewsModel.fromJson(item)).toList();
-        return articles;
+        body.forEach((element) {
+          breakingNewsArticles.add(NewsModel.fromJson(element));
+        });
+
+        return breakingNewsArticles;
       } else {
         throw Exception('News not found');
       }
     } catch (e) {
       rethrow;
+    }
+  }
+
+  Future<List<NewsModel>> getAllNews() async {
+    try {
+      Response response = await get(Uri.parse(allNewsUrl));
+      if (response.statusCode == 200) {
+        Map<String, dynamic> json = jsonDecode(response.body);
+        List<dynamic> list = json['articles'];
+        list.forEach((element) {
+          articles.add(NewsModel.fromJson(element));
+        });
+      }
+      return articles;
+    } catch (e) {
+      throw e.toString();
     }
   }
 }

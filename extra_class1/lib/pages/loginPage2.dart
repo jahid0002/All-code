@@ -1,4 +1,5 @@
 import 'package:extra_class1/const/allText.dart';
+import 'package:extra_class1/pages/firstPage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:msh_checkbox/msh_checkbox.dart';
@@ -27,12 +28,6 @@ class LoginPage2 extends StatelessWidget {
                         width: size.width,
                         fit: BoxFit.cover,
                       )),
-                  Positioned( 
-                    top: 150,  
-                    right: 10,
-                    child: AllText.text('Order and \nGet to door Step',
-                        Colors.blue.shade600, 30, FontWeight.w900),
-                  ),
                 ],
               ),
               const SizedBox(height: 20),
@@ -66,7 +61,8 @@ class LoginPage2 extends StatelessWidget {
                           //const SizedBox(height: 5),
                           TextFormField(
                             decoration: InputDecoration(
-                                suffixIcon: const Icon(Icons.remove_red_eye_rounded),
+                                suffixIcon:
+                                    const Icon(Icons.remove_red_eye_rounded),
                                 border: InputBorder.none,
                                 focusColor: Colors.purple.shade600,
                                 hintText: 'Enter password'),
@@ -88,7 +84,7 @@ class LoginPage2 extends StatelessWidget {
                           // ignore: deprecated_member_use
                           uncheckedColor: Colors.blue,
                           size: 22,
-                          value: false, 
+                          value: false,
                           onChanged: (selected) {},
                         ),
                         const SizedBox(
@@ -99,18 +95,24 @@ class LoginPage2 extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.center,
-                    height: 60,
-                    width: 200,
-                    decoration: const BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20))),
-                    child: AllText.text(
-                        'SIGNIN', Colors.white, 25, FontWeight.w800),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (_) => const FirstPage()));
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 60,
+                      width: 200,
+                      decoration: const BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20))),
+                      child: AllText.text(
+                          'SIGNIN', Colors.white, 25, FontWeight.w800),
+                    ),
                   ),
                 ],
               ),
