@@ -1,45 +1,30 @@
 import 'dart:io';
 
 void main(){
+    // condition
+     // loop
 
-  Map<String, dynamic> map = {'name': 'Country', 'data':<String,String> {
-    'name':'Bangladesh',
-    'polulation': '20 Core',
-    'prime-minister':'Shekh Hasina'
-  }};
+     int a = 20;
+     int b = 40;
+     int c = 30;
 
-// Q no 1:
-  print(map['data']['prime-minister']);
 
-  print(map);
+     if( a > b  && a > c ){
+         print(' a is a big number');
+     }else if(b > a && b > c){
+          print(' b is a big number');
+     } else{
+          print('c is a big number');
+     }
 
-  //Q no 2:
-  map['data'].removeWhere((key,  value) => value == 'Bangladesh');
 
-  print(map);
 
-  //Q no 3
-  map['data']['polulation'] = '30 Core';
-  print(map);
-  //Q no 4:
-  Number no = Number.one;
 
-  switch(no){
-    case Number.one:
-      print('One');
-      break;
-    case Number.two:
-      print('Two');
-      break;
-    case Number.three:
-      print('Three');
-      break;
-    case Number.four:
-      print('Four');
 
-  }
+
+
+
 
 }
 
 
-enum Number {one, two, three, four}

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "201672904831",
+    "firebase_url": "https://socialmedia1-61656-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "socialmedia1-61656",
+    "storage_bucket": "socialmedia1-61656.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201672904831:android:d7e750eaebfbce4b9eaf4a",
+        "android_client_info": {
+          "package_name": "com.example.socialmedia1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeEjiOyihot-kaxdg_6APUIh7LKyx8uXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

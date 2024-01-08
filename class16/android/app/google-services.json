@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "558843228440",
+    "firebase_url": "https://class16-f9a31-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "class16-f9a31",
+    "storage_bucket": "class16-f9a31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558843228440:android:557cb52cd81f67c0a56e6d",
+        "android_client_info": {
+          "package_name": "com.example.class16"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1oN4Bw5egIrWLMsZrY0ZJ-etOeSjvCEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

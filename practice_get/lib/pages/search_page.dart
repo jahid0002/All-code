@@ -8,10 +8,7 @@ import 'package:practice_get/models/NoteModel.dart';
 // ignore: must_be_immutable
 class SearchPage extends StatelessWidget {
   NoteModel? note;
-  SearchPage({
-    super.key, 
-     this.note
-  });
+  SearchPage({super.key, this.note});
 
   NoteControllers noteControllers = NoteControllers();
 
@@ -29,21 +26,20 @@ class SearchPage extends StatelessWidget {
           );
         }
         return Padding(
-          padding: const EdgeInsets.only(right:15.0, left: 15),
-          child: Card( 
-            elevation: 3, 
+          padding: const EdgeInsets.only(right: 15.0, left: 15),
+          child: Card(
+            elevation: 3,
             shadowColor: Colors.blue,
             child: ListTile(
               trailing: IconButton(
                 icon: Icon(Icons.delete, size: 20, color: Colors.blue.shade200),
                 onPressed: () {
                   noteControllers.deleteNote(note!);
+                  Navigator.pop(context);
                 },
               ),
-              title: All.text(note!.name, Colors.black, 20,
-                  FontWeight.w700),
-              leading: All.text(note!.id, Colors.black, 16,
-                  FontWeight.w700),
+              title: All.text(note!.name, Colors.black, 20, FontWeight.w700),
+              leading: All.text(note!.id, Colors.black, 16, FontWeight.w700),
               subtitle: Expanded(
                   child: Text(
                 note!.discription,
